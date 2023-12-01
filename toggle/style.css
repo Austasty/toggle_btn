@@ -1,0 +1,250 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500&family=Public+Sans:wght@200;300;400&family=Roboto:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ROOT VARIABLES */
+:root{
+    --Secondary-Colour:#006167;
+    --PRIMARY-COLOUR:#FABF00;
+    --Unsecondary-Colour:#FFF;
+}
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    width: 15%;
+    font-weight: 600;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.round {
+    border-radius: 34px;
+}
+
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Add rules for text color in dark mode */
+.dark-mode h1,
+.dark-mode p,
+.dark-mode #modeText {
+    color: #fff;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+    transition: all 0.4s;
+    width: 100%;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+.home{
+    color: var(--PRIMARY-COLOUR) !important;
+}
+.navbar.active .nav-link {
+    color: #555;
+}
+.dropdown-toggle::after {
+    border-top-color: red!important; /* Change this to your desired color */
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+  .dropdown-menu .dropdown-item{
+    color: var(--Secondary-Colour)!important; 
+  }
+
+.navbar .navbar-nav{
+    
+    display: flex ;
+    /* height: 100px; */
+    padding: 10px 10px 10px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex: 1 0 0;
+    border-radius: 5px 0px 0px 5px;
+    background: var(--Secondary-Colour);
+}
+.navbar .navbar-nav .nav-item a{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    color: var(--Unsecondary-Colour);
+
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    
+}
+.burger {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+/* CARUSEL */
+.carousel-item img {
+    object-fit: cover; 
+    height: 100vh !important; 
+}
+.carousel-caption{
+    width: 1192px;
+    height: 201px;
+    text-transform: capitalize;
+    position: absolute;
+    right: 20%;
+    top: 40%; 
+    left: 10%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+.carousel-inner h1{
+   font-size: 4.75rem !important;
+   font-weight: bolder;
+  
+}
+.carousel-inner h2{
+    font-size: 2.75rem !important;
+}
+.carousel-caption h1,.carousel-caption h2{
+    margin: 10px 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    animation: animtext 3.5s steps(80, end); 
+     transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  }
+  .carousel-indicators button {
+    border-radius: 100% !important; /* This makes the indicator round */
+    padding: 5px !important;
+    width: 5px !important;
+    height: 5px !important;
+    
+}
+  @keyframes animtext { 
+    from {
+        width: 0;
+       transition: all 3s ease-in-out;
+    } 
+    to {
+      transform: translateX(0%);
+      transition: all 2s ease-in-out;
+    }
+  }
+  .button
+{
+    text-decoration: none;
+    background: #006167;
+    box-shadow: 0px 16px 24px 2px rgba(0, 0, 0, 0.14);
+    padding: 1.8rem 2.6rem;
+    display: block;
+    border-radius: 8px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    width: 6rem;
+    text-align: center;
+}
+.button:hover
+{
+    background: #FABF00;
+    color: #006167;
+}
+
+@media only screen and (max-width: 780px) {
+    .nav-link {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        background-color: #333;
+    }
+
+    .nav-link.show {
+        display: flex;
+    }
+
+    .nav-link li {
+        margin: 0;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+
+
